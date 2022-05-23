@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "poc-block-editor-libs",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "repository": "git@github.com:shuta13/poc-block-editor-libs.git",
+  "author": "shuta13 <hollystarsun@gmail.com>",
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
