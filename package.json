@@ -6,7 +6,10 @@
   "repository": "git@github.com:shuta13/poc-block-editor-libs.git",
   "author": "shuta13 <hollystarsun@gmail.com>",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
   "devDependencies": {
     "typescript": "^4.6.4"
   }
