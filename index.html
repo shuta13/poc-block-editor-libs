@@ -2,11 +2,29 @@
 <html>
   <head>
     <title>poc block editor libs</title>
-    <link rel="stylesheet" href="common.css" />
+    <link href="/global.css" rel="stylesheet" />
   </head>
   <body>
-    <div id="editor"></div>
-    <div id="toolbar"></div>
+    <header>
+      <h1>poc block editor libs</h1>
+    </header>
+    <main>
+      <h2>With Quill</h2>
+      <section name="vanilla">
+        <h3>Vanilla</h3>
+        <div>
+          <div id="editor" class="editor"></div>
+          <span id="toolbar" class="toolbar">
+            <button class="ql-bold"></button>
+            <button id="cheer-button">🥳</button>
+          </span>
+        </div>
+      </section>
+      <section name="with-react">
+        <h3>With React</h3>
+        <div id="root"></div>
+      </section>
+    </main>
   </body>
-  <script src="/src/index.ts"></script>
+  <script src="/src/index.tsx"></script>
 </html>
