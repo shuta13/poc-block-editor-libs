@@ -1,18 +1,32 @@
 import "./assets/styles/global.css";
-import { Editor, ToolBar } from "./components";
-
-import { createEditorJS } from "./helpers";
-
+import "./assets/styles/editorjs.css";
+import { createEditorJS, handleOnClickSave, PoCToolBar } from "./utils";
 import React from "react";
 import * as ReactDOM from "react-dom/client";
+import { App } from "./components";
 
-createEditorJS();
+/**
+ * @description Vanilla
+ */
+const editor = createEditorJS({
+  holder: "block-editor",
+  placeholder: "Type something",
+  tools: {
+    poc: PoCToolBar
+  }
+});
+const saveButton = document.getElementById("save-button");
+saveButton?.addEventListener("click", () => handleOnClickSave(editor));
 
-const reactContainer = document.getElementById("root")!;
-const root = ReactDOM.createRoot(reactContainer);
-root.render(
-  <>
-    <Editor />
-    <ToolBar />
-  </>
-);
+/**
+ * @description With React
+ */
+const reactContainer = document.getElementById("root");
+if (reactContainer) {
+  const root = ReactDOM.createRoot(reactContainer);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
