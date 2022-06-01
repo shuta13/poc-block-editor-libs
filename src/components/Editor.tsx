@@ -3,6 +3,7 @@ import { createEditorJS } from "../utils";
 import type EditorJS from "@editorjs/editorjs";
 import { useRecoilState } from "recoil";
 import { editorOutput } from "../helpers";
+import { EDITORJS_CONFIGS } from "../configs";
 
 export const Editor: React.FC = () => {
   const [, setOutput] = useRecoilState(editorOutput);
@@ -12,7 +13,7 @@ export const Editor: React.FC = () => {
   const attach = useCallback((e: HTMLDivElement) => {
     const editorJs = createEditorJS({
       holder: e,
-      placeholder: "With React!"
+      ...EDITORJS_CONFIGS
     });
     setInstance(editorJs);
   }, []);
@@ -21,6 +22,7 @@ export const Editor: React.FC = () => {
     await instance?.isReady;
     const saved = await instance?.save();
     if (saved) setOutput(saved);
+    else throw new Error();
   }, [instance, setOutput]);
 
   return (

@@ -1,8 +1,7 @@
 import EditorJS, { EditorConfig } from "@editorjs/editorjs";
 import { WithRequired } from "../helpers";
 
-type CreateEditorJSParams = WithRequired<EditorConfig, "holder">;
-
+export type CreateEditorJSParams = WithRequired<EditorConfig, "holder">;
 export const createEditorJS = (params: CreateEditorJSParams) => {
   return new EditorJS(params);
 };
@@ -16,11 +15,3 @@ export const handleOnClickSave = async (editor: EditorJS) => {
     output.innerText = JSON.stringify(saved);
   }
 };
-
-export class PoCToolBar {
-  static get toolbox() {
-    return {};
-  }
-  render() {}
-  save() {}
-}

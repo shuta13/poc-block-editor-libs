@@ -1,21 +1,16 @@
 import "./assets/styles/global.css";
 import "./assets/styles/editorjs.css";
-import { createEditorJS, handleOnClickSave, PoCToolBar } from "./utils";
+import { createEditorJS, handleOnClickSave } from "./utils";
 import React from "react";
 import * as ReactDOM from "react-dom/client";
-import { App } from "./components";
+import { App, ErrorBoundary } from "./components";
 import { RecoilRoot } from "recoil";
+import { EDITORJS_CONFIGS } from "./configs";
 
 /**
  * @description Vanilla
  */
-const editor = createEditorJS({
-  holder: "editorjs",
-  placeholder: "Type something",
-  tools: {
-    poc: PoCToolBar
-  }
-});
+const editor = createEditorJS({ holder: "editorjs", ...EDITORJS_CONFIGS });
 const saveButton = document.getElementById("save-button");
 saveButton?.addEventListener("click", () => handleOnClickSave(editor));
 
@@ -27,9 +22,11 @@ if (reactContainer) {
   const root = ReactDOM.createRoot(reactContainer);
   root.render(
     <React.StrictMode>
-      <RecoilRoot>
-        <App />
-      </RecoilRoot>
+      <ErrorBoundary>
+        <RecoilRoot>
+          <App />
+        </RecoilRoot>
+      </ErrorBoundary>
     </React.StrictMode>
   );
 }
