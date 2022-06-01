@@ -4,6 +4,7 @@ import { createEditorJS, handleOnClickSave, PoCToolBar } from "./utils";
 import React from "react";
 import * as ReactDOM from "react-dom/client";
 import { App } from "./components";
+import { RecoilRoot } from "recoil";
 
 /**
  * @description Vanilla
@@ -26,7 +27,9 @@ if (reactContainer) {
   const root = ReactDOM.createRoot(reactContainer);
   root.render(
     <React.StrictMode>
-      <App />
+      <RecoilRoot>
+        <App />
+      </RecoilRoot>
     </React.StrictMode>
   );
 }
