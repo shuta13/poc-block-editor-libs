@@ -9,7 +9,7 @@ import { App } from "./components";
  * @description Vanilla
  */
 const editor = createEditorJS({
-  holder: "block-editor",
+  holder: "editorjs",
   placeholder: "Type something",
   tools: {
     poc: PoCToolBar
