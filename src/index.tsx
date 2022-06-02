@@ -1,16 +1,22 @@
 import "./assets/styles/global.css";
 import "./assets/styles/editorjs.css";
-import { createEditorJS, handleOnClickSave } from "./utils";
+import {
+  createEditorJS,
+  editorConfigsFactory,
+  handleOnClickSave
+} from "./utils";
 import React from "react";
 import * as ReactDOM from "react-dom/client";
 import { App, ErrorBoundary } from "./components";
 import { RecoilRoot } from "recoil";
-import { EDITORJS_CONFIGS } from "./configs";
 
 /**
  * @description Vanilla
  */
-const editor = createEditorJS({ holder: "editorjs", ...EDITORJS_CONFIGS });
+const editor = createEditorJS({
+  holder: "editorjs",
+  ...editorConfigsFactory({})
+});
 const saveButton = document.getElementById("save-button");
 saveButton?.addEventListener("click", () => handleOnClickSave(editor));
 
