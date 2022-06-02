@@ -1,8 +1,10 @@
 import React from "react";
-import { useRecoilState } from "recoil";
-import { editorOutput } from "../helpers";
+import { ExtendableObject } from "../helpers";
 
-export const Output: React.FC = () => {
-  const [output] = useRecoilState(editorOutput);
-  return <pre>{output && JSON.stringify(output)}</pre>;
+type Props = {
+  data?: ExtendableObject;
+};
+
+export const Output: React.FC<Props> = ({ data }) => {
+  return <pre>{data && JSON.stringify(data)}</pre>;
 };

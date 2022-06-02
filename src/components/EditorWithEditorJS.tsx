@@ -1,12 +1,12 @@
 import React, { useCallback, useState } from "react";
 import { createEditorJS, editorConfigsFactory } from "../utils";
 import type EditorJS from "@editorjs/editorjs";
-import { useRecoilState } from "recoil";
-import { editorOutput } from "../helpers";
+import { ExtendableObject } from "../helpers";
+import { Output } from "./Output";
+import { SaveButton } from "./SaveButton";
 
-export const Editor: React.FC = () => {
-  const [, setOutput] = useRecoilState(editorOutput);
-
+export const EditorWithEditorJS: React.FC = () => {
+  const [output, setOutput] = useState<ExtendableObject | undefined>();
   const [instance, setInstance] = useState<EditorJS | null>(null);
 
   const attach = useCallback((e: HTMLDivElement) => {
@@ -26,8 +26,10 @@ export const Editor: React.FC = () => {
 
   return (
     <>
+      <h3>Editor.js</h3>
       <div ref={attach} />
-      <button onClick={handleClick}>save</button>
+      <SaveButton onClick={handleClick} />
+      <Output data={output} />
     </>
   );
 };

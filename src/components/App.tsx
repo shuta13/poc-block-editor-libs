@@ -1,12 +1,16 @@
 import React from "react";
-import { Editor } from "./Editor";
-import { Output } from "./Output";
+import { EditorWithEditorJS } from "./EditorWithEditorJS";
+import { EditorWithGurtenberg } from "./EditorWithGurtenberg";
+import { EditorWithLexical } from "./EditorWithLexical";
 
 export const App: React.FC = () => {
   return (
     <>
-      <Editor />
-      <Output />
+      <EditorWithEditorJS />
+      <hr />
+      <EditorWithGurtenberg />
+      <hr />
+      <EditorWithLexical />
     </>
   );
 };

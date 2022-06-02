@@ -1,17 +1,37 @@
 html,
 body {
   margin: 0;
+  font-size: 16px;
+  color: darkslategray;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.editor {
+button {
+  width: 4rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4rem;
+  color: white;
+  background: darkslategray;
+  cursor: pointer;
 }
 
-.toolbar {
+button:hover {
+  background: slategray;
 }
 
-.with-editorjs {
+.wrapper {
+  margin: 2rem;
+}
+
+.container {
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+  border: solid 0.15rem darkslategray;
+  border-radius: 2rem;
 }

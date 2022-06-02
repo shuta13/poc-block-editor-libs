@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <title>poc block editor libs</title>
   </head>
   <body>
-    <header>
-      <h1>poc block editor libs</h1>
-    </header>
-    <main>
-      <section class="with-editorjs">
-        <h2>With Editor.js</h2>
+    <main class="wrapper">
+      <header>
+        <h1>poc block editor libs</h1>
+      </header>
+      <section class="container">
+        <h2>VanillaJS + 〇〇〇</h2>
         <div>
-          <h3>Vanilla</h3>
+          <h3>Editor.js</h3>
           <div id="editorjs"></div>
           <button id="save-button">save</button>
           <pre id="output"></pre>
         </div>
-        <div>
-          <h3>With React</h3>
-          <div id="root"></div>
-        </div>
+      </section>
+      <section class="container">
+        <h2>React + 〇〇〇</h2>
+        <div id="root"></div>
       </section>
     </main>
+    <script src="src/index.tsx"></script>
   </body>
-  <script src="src/index.tsx"></script>
 </html>
