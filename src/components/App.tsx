@@ -1,6 +1,6 @@
 import React from "react";
 import { EditorWithEditorJS } from "./EditorWithEditorJS";
-import { EditorWithGurtenberg } from "./EditorWithGurtenberg";
+// import { EditorWithGurtenberg } from "./EditorWithGurtenberg";
 import { EditorWithLexical } from "./EditorWithLexical";
 
 export const App: React.FC = () => {
@@ -8,7 +8,11 @@ export const App: React.FC = () => {
     <>
       <EditorWithEditorJS />
       <hr />
-      <EditorWithGurtenberg />
+      {/*
+       * NOTE: comment out for suppressing the error
+       * <EditorWithGurtenberg />
+       *
+       */}
       <hr />
       <EditorWithLexical />
     </>
