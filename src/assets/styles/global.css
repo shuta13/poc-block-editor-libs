@@ -1,3 +1,6 @@
+@import "./editorjs.css";
+@import "./lexical.css";
+
 html,
 body {
   margin: 0;

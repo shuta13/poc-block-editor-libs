@@ -31,11 +31,13 @@ export class ErrorBoundary extends React.Component<Props, State> {
   }
 
   render() {
+    if (this.state.hasError) {
+      return <h2>Something went wrong.</h2>;
+    }
     if (this.state.errorInfo) {
       // Error path
       return (
         <div>
-          <h2>Something went wrong.</h2>
           <details style={{ whiteSpace: "pre-wrap" }}>
             {this.state.error && this.state.error.toString()}
             <br />
